@@ -7,34 +7,38 @@ using System.Web;
 
 namespace Aplakhtiy.TestForm.Models
 {
-	public class User
-	{
-		[Key]
-		public int UserId { get; set; }
+    public class User
+    {
+        [Key]
+        public int UserId { get; set; }
 
-		[Display(Name="Прізвище")]
-		[Required(ErrorMessage = "Прізвище обов'язково вказувати")]
-		public string Surname { get; set; }
+        [Display(Name = "Фамилия")]
+        [Required(ErrorMessage = "Поле \"Фамилия\" обязательно для заполнения.")]
+        public string Surname { get; set; }
 
-		[Display(Name = "Ім'я")]
-		[Required(ErrorMessage = "Ім'я обов'язково вказувати")]
-		public string Name { get; set; }
+        [Display(Name = "Имя")]
+        [Required(ErrorMessage = "Поле \"Имя\" обязательно для заполнения.")]
+        public string Name { get; set; }
 
-		[Display(Name = "По-батькові")]
-		[Required(ErrorMessage = "По-батькові обов'язково вказувати")]
-		public string Patronymic { get; set; }
+        [Display(Name = "Отчество")]
+        [Required(ErrorMessage = "Поле \"Отчество\" обязательно для заполнения.")]
+        public string Patronymic { get; set; }
 
-		[Display(Name = "Номер телефону")]
-		[Required(ErrorMessage = "Номер телефону обов'язково вказувати")]
-		public string PhoneNumber { get; set; }
+        [Display(Name = "Номер телефона")]
+        [Required(ErrorMessage = "Необходимо указать телефон.")]
+        [Phone(ErrorMessage = "Некорректный номер телефона.")]
+        [RegularExpression("^(39|50|63|66|67|68|73|91|92|93|94|95|96|97|98|99).*",
+            ErrorMessage = "Некорректный код мобильного оператора.")]
+        public string PhoneNumber { get; set; }
 
-		[Display(Name = "Працює")]
-		public bool Employed { get; set; }
+        [Display(Name = "Трудоустроен")]
+        public bool Employed { get; set; }
 
-		[Display(Name = "Назва організації")]
-		public string OrganizationName { get; set; }
+        [Display(Name = "Организация")]
+        public string OrganizationName { get; set; }
 
-		[Display(Name = "Почав працювати")]
-		public DateTime? StartOnUtc { get; set; }
-	}
+        [Display(Name = "Работает с")]
+        [DataType(DataType.Date)]
+        public DateTime? StartOnUtc { get; set; }
+    }
 }
