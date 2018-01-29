@@ -24,7 +24,7 @@ namespace Aplakhtiy.TestForm.Models
         [Required(ErrorMessage = "Поле \"Отчество\" обязательно для заполнения.")]
         public string Patronymic { get; set; }
 
-        [Display(Name = "Номер телефона")]
+        [Display(Name = "Мобильный телефон")]
         [Required(ErrorMessage = "Необходимо указать телефон.")]
         [Phone(ErrorMessage = "Некорректный номер телефона.")]
         [RegularExpression("^(39|50|63|66|67|68|73|91|92|93|94|95|96|97|98|99).*",
