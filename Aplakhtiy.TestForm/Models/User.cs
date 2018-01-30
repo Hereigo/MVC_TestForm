@@ -26,9 +26,10 @@ namespace Aplakhtiy.TestForm.Models
 
         [Display(Name = "Мобильный телефон")]
         [Required(ErrorMessage = "Необходимо указать телефон.")]
-        [Phone(ErrorMessage = "Некорректный номер телефона.")]
-        [RegularExpression("^(39|50|63|66|67|68|73|91|92|93|94|95|96|97|98|99).*",
-            ErrorMessage = "Некорректный код мобильного оператора.")]
+		[MinLength(9)]
+		[MaxLength(9)]
+        [RegularExpression("^(39|50|63|66|67|68|73|91|92|93|94|95|96|97|98|99)[0-9]*",
+            ErrorMessage = "Некорректный номер мобильного телефона.")]
         public string PhoneNumber { get; set; }
 
         [Display(Name = "Трудоустроен")]
