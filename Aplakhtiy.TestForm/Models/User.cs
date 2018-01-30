@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Web;
 
 namespace Aplakhtiy.TestForm.Models
 {
@@ -26,10 +22,10 @@ namespace Aplakhtiy.TestForm.Models
 
         [Display(Name = "Мобильный телефон")]
         [Required(ErrorMessage = "Необходимо указать телефон.")]
-		[MinLength(9)]
-		[MaxLength(9)]
-        [RegularExpression("^(39|50|63|66|67|68|73|91|92|93|94|95|96|97|98|99)[0-9]*",
-            ErrorMessage = "Некорректный номер мобильного телефона.")]
+        [MinLength(9)]
+        [MaxLength(9)]
+        [RegularExpression("^(39|50|63|66|67|68|73|91|92|93|94|95|96|97|98|99).*",
+            ErrorMessage = "Некорректный код мобильного оператора.")]
         public string PhoneNumber { get; set; }
 
         [Display(Name = "Трудоустроен")]

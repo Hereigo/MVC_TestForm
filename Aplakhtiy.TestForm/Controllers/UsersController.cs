@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Net;
-using System.Web;
-using System.Web.Mvc;
-using Aplakhtiy.TestForm.DAL;
+﻿using Aplakhtiy.TestForm.DAL;
 using Aplakhtiy.TestForm.Models;
+using System.Data.Entity;
+using System.Net;
+using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace Aplakhtiy.TestForm.Controllers
 {
@@ -44,8 +39,6 @@ namespace Aplakhtiy.TestForm.Controllers
         }
 
         // POST: Users/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "UserId,Surname,Name,Patronymic,PhoneNumber,Employed,OrganizationName,StartOnUtc")] User user)
@@ -76,8 +69,6 @@ namespace Aplakhtiy.TestForm.Controllers
         }
 
         // POST: Users/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit([Bind(Include = "UserId,Surname,Name,Patronymic,PhoneNumber,Employed,OrganizationName,StartOnUtc")] User user)
