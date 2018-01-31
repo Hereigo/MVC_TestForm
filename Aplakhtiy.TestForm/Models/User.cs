@@ -32,10 +32,10 @@ namespace Aplakhtiy.TestForm.Models
         public bool Employed { get; set; }
 
         [Display(Name = "Организация")]
-        public string OrganizationName { get; set; }
+		public string OrganizationName { get; set; }
 
         [Display(Name = "Работает с")]
-        [DataType(DataType.Date)]
+		[DataType(DataType.Date, ErrorMessage = "Дата указана не корректно.")]
         public DateTime? StartOnUtc { get; set; }
     }
 }
