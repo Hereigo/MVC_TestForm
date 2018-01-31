@@ -41,6 +41,9 @@
             @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
         </div>
 
+		<div class="form-group col-xs-6">
+		</div>
+
         <div class="form-group col-xs-6">
             @Html.LabelFor(model => model.Employed)
             <div class="checkbox">
@@ -50,16 +53,20 @@
         </div>
 
         <div class="form-group col-xs-6">
-            @Html.LabelFor(model => model.OrganizationName)
-            @Html.EditorFor(model => model.OrganizationName, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.OrganizationName, "", new { @class = "text-danger" })
+			<div class="organiz">
+				@Html.LabelFor(model => model.OrganizationName)
+				@Html.EditorFor(model => model.OrganizationName, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.OrganizationName, "", new { @class = "text-danger" })
+			</div>
         </div>
 
-        <div class="form-group col-xs-6">
-            @Html.LabelFor(model => model.StartOnUtc)
-            @Html.EditorFor(model => model.StartOnUtc, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.StartOnUtc, "", new { @class = "text-danger" })
-        </div>
+		<div class="form-group col-xs-6">
+			<div class="organiz">
+				@Html.LabelFor(model => model.StartOnUtc)
+				@Html.EditorFor(model => model.StartOnUtc, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.StartOnUtc, "", new { @class = "text-danger" })
+			</div>
+		</div>
 
         <div class="form-group col-xs-6">
             <input type="submit" value="Создать нового пользователя" class="btn btn-primary" />
@@ -73,5 +80,5 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-    <script src="@Url.Content("~/Scripts/phone.numbers.only.js")"></script>
+    <script src="@Url.Content("~/Scripts/a-users-view.js")"></script>
 }
