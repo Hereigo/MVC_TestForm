@@ -15,7 +15,7 @@ Simple ASP.Net MVC form with validation.
 
 > - Запомнить состояние чекбокса.
 
-> - ...
+> - :) Fix: Error: E_INVALID_PAR_TYPE: Invalid `options` parameter (dd/MM/yyyy). Plain Object expected.
 
 Надеюсь это учтётся, поскольку работа больше механического плана.
 Спасибо за понимание!
