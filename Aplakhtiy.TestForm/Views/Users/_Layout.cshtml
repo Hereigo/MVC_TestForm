@@ -5,18 +5,25 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>@ViewBag.Title - My ASP.NET Application</title>
 	@Styles.Render("~/Content/css")
+	<script src="@Url.Content("~/Scripts/cldr.js")"></script>
+	<script src="@Url.Content("~/Scripts/cldr/event.js")"></script>
+	<script src="@Url.Content("~/Scripts/cldr/supplemental.js")"></script>
+	<script src="@Url.Content("~/Scripts/globalize.js")"></script>
+	<script src="@Url.Content("~/Scripts/globalize/message.js")"></script>
+	<script src="@Url.Content("~/Scripts/globalize/number.js")"></script>
+	<script src="@Url.Content("~/Scripts/globalize/date.js")"></script>
 	@Scripts.Render("~/bundles/modernizr")
 	<style>
-		.btn-primary {
+		.btn-primary,
+		.btn-primary:active,
+		.btn-primary:active:focus {
 			background-color: green;
 			border-color: green;
 		}
-
 			.btn-primary:hover {
-				background-color: limegreen;
-				border-color: limegreen;
+				background-color: seagreen;
+				border-color: seagreen;
 			}
-
 		.form-control {
 			border-color: green;
 		}

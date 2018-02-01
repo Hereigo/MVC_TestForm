@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Aplakhtiy.TestForm.Attributes;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Aplakhtiy.TestForm.Models
@@ -8,7 +9,7 @@ namespace Aplakhtiy.TestForm.Models
         [Key]
         public int UserId { get; set; }
 
-        [Display(Name = "Фамилия")]
+		[Display(Name = "Фамилия")]
         [Required(ErrorMessage = "Поле \"Фамилия\" обязательно для заполнения.")]
         public string Surname { get; set; }
 
@@ -35,7 +36,8 @@ namespace Aplakhtiy.TestForm.Models
 		public string OrganizationName { get; set; }
 
         [Display(Name = "Работает с")]
-		[DataType(DataType.Date, ErrorMessage = "Дата указана не корректно.")]
-        public DateTime? StartOnUtc { get; set; }
+		[DataType(DataType.Date, ErrorMessage = "Необходимо указать дату.")]
+		[ValidUtcDate(ErrorMessage = "Дата указана не корректно.")]
+		public DateTime? StartOnUtc { get; set; }
     }
 }

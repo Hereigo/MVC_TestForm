@@ -1,5 +1,26 @@
 ﻿$(document).ready(function () {
 
+	$(function () {
+
+		jQuery.validator.addMethod('validbirthdate', function (value, element, params) {
+			var currentDate = new Date();
+			if (Date.parse(value) > currentDate) {
+				return false;
+			}
+			return true;
+		}, '');
+
+		jQuery.validator.unobtrusive.adapters.add('validbirthdate', function (options) {
+			options.rules['validbirthdate'] = {};
+			options.messages['validbirthdate'] = options.message;
+		});
+
+	}(jQuery));
+
+	//$.validator.methods.date = function (value, element) {
+	//	return this.optional(element) || Globalize.parseDate(value, "dd/MM/yyyy", "ru-RU");
+	//}
+
 	$("#PhoneNumber").keydown(function (e) {
 		// Allow: backspace, delete, tab, escape, enter and .
 		if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||

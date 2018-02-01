@@ -15,7 +15,6 @@ namespace Aplakhtiy.TestForm.Helpers
 
             TagBuilder inputTableCell = new TagBuilder("div");
             inputTableCell.MergeAttribute("style", "display:table-cell;");
-            inputTableCell.MergeAttribute("onkeydown", "numbersOnly(event)");
             inputTableCell.InnerHtml = editor.ToString()
                 .Replace("class=\"form-control text-box single-line\"", "style=\"border:0;\"");
 
